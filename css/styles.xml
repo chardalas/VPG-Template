@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<styles version="1.0">
+	<set name="Default Page">
+		<style name="Basic Color" variable="basic" type="color" />
+		<style name="Basic Spacing" variable="basic-spacing" type="size" />
+	</set>
+	<set name="Body">
+		<style name="Body" variable="body" type="type" />
+	</set>
+	<set name="Custom Area">
+		<style name="Custom Area Color" variable="custom-area" type="color" />
+		<style name="Custom Area Image" variable="custom-area" type="image" />
+	</set>
+</styles>
