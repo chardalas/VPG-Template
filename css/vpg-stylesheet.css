@@ -1,0 +1,29 @@
+.navbar {
+		margin-bottom: 10px;
+}
+
+.img-responsive {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	width:100%;
+}
+
+.footer-links.col-first img {
+  width: 80%;
+  display: inline;
+}
+
+/*.footer_container {
+	margin-top:0px; 
+	margin-bottom:0px;
+}*/
+
+/*@media (min-width: 768px) {
+	.navbar-left {
+		float: left !important;
+	}
+	.navbar-right {
+		float: right !important;
+	}
+}*/

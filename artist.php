@@ -53,24 +53,25 @@
               </div>
               <div class="navbar-collapse collapse" id="templatemo-nav-bar">
                 <?php
-                    
-                    
+                    /**
+                     * Render the "Main Menu" area.
+                     */
                     $a = new GlobalArea('Main Menu');
-                    $a->enableGridContainer();
                     $a->display($c);
-                    //print $a->getTotalBlocksInArea($c);
-                  // $bt = BlockType::getByHandle('autonav');
-                  // $bt->controller->orderBy = 'display_asc';
-                  // $bt->controller->displayPages = 'Menu region';
-                  //$bt->controller->displaySubPages = 'relevant_breadcrumb';
-                  //$bt->controller->displaySubPageLevels = 'all';
-                  // $bt->render();
-                  // $a = new Area('Menu region');
-                  // $blocks = $page->getBlocks();
-                  // print $blocks;
-                  // $a = GlobalArea('Menu region');
-                  // $a->enableGridContainer();
-                  // $bt->display();
+                    // $a->enableGridContainer();
+                    // print $a->getTotalBlocksInArea($c);
+                    // $bt = BlockType::getByHandle('autonav');
+                    // $bt->controller->orderBy = 'display_asc';
+                    // $bt->controller->displayPages = 'Menu region';
+                    // $bt->controller->displaySubPages = 'relevant_breadcrumb';
+                    // $bt->controller->displaySubPageLevels = 'all';
+                    // $bt->render();
+                    // $a = new Area('Menu region');
+                    // $blocks = $page->getBlocks();
+                    // print $blocks;
+                    // $a = GlobalArea('Menu region');
+                    // $a->enableGridContainer();
+                    // $bt->display();
                 ?>
                 <!--<ul class="nav navbar-nav navbar-right" style="margin-top: 40px;">
                   <li class="active"><a href="#templatemo-top">HOME</a></li>

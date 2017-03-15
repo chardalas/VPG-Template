@@ -17,23 +17,11 @@
     <!-- Custom styles for this template -->
     <link href="<?php print $view->getThemePath() ?>/js/colorbox/colorbox.css"  rel='stylesheet' type='text/css'>
     <link href="<?php print $view->getStyleSheet('templatemo_style.less') ?>"  rel='stylesheet' type='text/css'>
+    <link href="<?php print $view->getStyleSheet('vpg-stylesheet.less') ?>"  rel='stylesheet' type='text/css'>
+    <link href="<?php print $view->getStyleSheet('vpg-stylesheet.css') ?>"  rel='stylesheet' type='text/css'>
   </head>
   <body>
     <div class="<?php print $c->getPageWrapperClass() ?>">
-      <div class="templatemo-top-bar" id="templatemo-top">
-        <div class="container">
-          <div class="subheader">
-            <div id="phone" class="pull-left">
-              <img src="<?php print $view->getThemePath() ?>/images/phone.png" alt="phone"/>
-              090-080-0110
-            </div>
-            <div id="email" class="pull-right">
-              <img src="<?php print $view->getThemePath() ?>/images/email.png" alt="email"/>
-              info@company.com
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="templatemo-top-menu">
         <div class="container">
           <!-- Static navbar -->
@@ -46,34 +34,33 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand"><img src="<?php print $view->getThemePath() ?>/images/templatemo_logo.png" alt="Urbanic Template" title="Urbanic Template" /></a>
+                <a href="<?php print $this->url(''); ?>" class="navbar-brand">
+                <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/logo.png" alt="Victor Pasmore Gallery" title="Victor Pasmore Gallery" />
+                </a>
               </div>
               <div class="navbar-collapse collapse" id="templatemo-nav-bar">
                 <?php
-                    /**
-                     * VPG-2 The Main Menu Area.
-                     */
-                    $a = new GlobalArea('Main Menu');
-                    //$a->enableGridContainer();
-                    $a->display($c);
-                   // print $a->getTotalBlocksInArea($c);
-                    // print $a->getTotalBlocksInArea($c);
-                    // $a = new Area('Menu region');
-                    // $a->display();
+                  /**
+                   * VPG-2 The "Main Menu" area.
+                   */
+                  $a = new GlobalArea('Main Menu');
+                  $a->display($c);
+                  // print '<pre>';
+                  // var_dump($this);
+                  // print '</pre>';
+                  // echo $this->url('sitemap');
+                  // echo $this->url('artist');
+                  // $a->enableGridContainer();
+                  // print $a->getTotalBlocksInArea($c);
+                  // print $a->getTotalBlocksInArea($c);
+                  // $a = new Area('Menu region');
+                  // $a->display();
                   
-                    // $a = new Area('Menu region');
-  									// $a->setBlockWrapperStart('<ul>');
-  									// $a->setBlockWrapperEnd('</ul>');
-  									// $a->display($c);
-                ?>
-                <!--<ul class="nav navbar-nav navbar-right" style="margin-top: 40px;">
-                  <li class="active"><a href="#templatemo-top">HOME</a></li>
-                  <li><a href="#templatemo-about">ABOUT</a></li>
-                  <li><a href="#templatemo-portfolio">PORTFOLIO</a></li>
-                  <li><a href="#templatemo-blog">BLOG</a></li>
-                  <li><a rel="nofollow" href="http://www.facebook.com/templatemo" class="external-link" target="_parent">EXTERNAL</a></li>
-                  <li><a href="#templatemo-contact">CONTACT</a></li>
-                </ul>-->
+                  // $a = new Area('Menu region');
+                  // $a->setBlockWrapperStart('<ul>');
+                  // $a->setBlockWrapperEnd('</ul>');
+                  // $a->display($c);
+                  ?>
               </div>
               <!--/.nav-collapse -->
             </div>
@@ -286,7 +273,7 @@
             <div class="clearfix"></div>
             <div class="templatemo-gallery-category" style="font-size:16px; margin-top:80px;">
               <div class="text-center">
-                <a class="active" href=".gallery">All</a> / <a href=".gallery-design">Web Design </a>/ <a href=".gallery-graphic">Graphic</a> / <a href=".gallery-inspiration">Inspiration</a> / <a href=".gallery-creative">Creative</a>							
+                <a class="active" href=".gallery">All</a> / <a href=".gallery-design">Web Design </a>/ <a href=".gallery-graphic">Graphic</a> / <a href=".gallery-inspiration">Inspiration</a> / <a href=".gallery-creative">Creative</a>             
               </div>
             </div>
           </div>
@@ -630,43 +617,100 @@
       <div class="templatemo-footer" >
         <div class="container">
           <div class="row">
-            <div class="text-center">
               <div class="footer_container">
-                <ul class="list-inline">
-                  <li>
-                    <a href="#">
-                    <span class="social-icon-fb"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    <span class="social-icon-rss"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    <span class="social-icon-twitter"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    <span class="social-icon-linkedin"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    <span class="social-icon-dribbble"></span>
-                    </a>
-                  </li>
-                </ul>
-                <div class="height30"></div>
-                <a class="btn btn-lg btn-orange" href="#" role="button" id="btn-back-to-top">Back To Top</a>
-                <div class="height30"></div>
+                <div class="col-md-6">
+                    <div class="footer-links col-first">
+                      <ul class="list-inline">
+                        <li>
+                          <a href="#">
+                            <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/footer/fpm-logo.png" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/footer/cbm-logo.png" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/footer/vpf-logo.png" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/footer/fp-logo.png" />
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="text-center"></div>
+                    <br class="clearfix"/>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-links col-second">
+                      <ul class="list-inline">
+                        <li>
+                          <a href="#">
+                            <p>Latest News</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <p>Contact Us</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <p>Terms and Conditions</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="text-center">
+                    </div>
+                    <br class="clearfix"/>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3">
+                  <div class="templatemo-service-item">
+                    <div class="footer-links col-third">
+                      <p>Follow us on:</p>
+                      <ul class="list-inline">
+                        <li>
+                          <a href="#">
+                          <span class="social-icon-fb"></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                          <span class="social-icon-rss"></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                          <span class="social-icon-twitter"></span>
+                          </a>
+                        </li>
+                      </ul>
+                      <!-- <img src="<?php print $view->getThemePath() ?>/images/leaf.png" alt="icon" /> -->
+                      <!-- <span class="templatemo-service-item-header">AWESOME ICONS</span> -->
+                    </div>
+                    <!-- <p>Nam porta adipiscing tortor, eget rutrum turpis bibendum ut. Donec eu lacus in diam euismod imperdiet eu ut turpis. Morbi felis orci, tincidunt pretium laoreet id, euismod et lacus. Praesent aliquet magna vitae mi elementum pharetra.</p> -->
+                    <div class="text-center">
+                      <!-- <a href="#" class="templatemo-btn-read-more btn btn-orange">READ MORE</a> -->
+                    </div>
+                    <br class="clearfix"/>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <!-- <div class="height30"></div> -->
+                <!-- <a class="btn btn-lg btn-orange" href="#" role="button" id="btn-back-to-top">Back To Top</a> -->
+                <!-- <div class="height30"></div> -->
               </div>
-              <div class="footer_bottom_content">
+              <!-- <div class="footer_bottom_content">
                 <span id="footer-line">Copyright © 2084 <a href="#">Your Company Name</a></span>
-              </div>
-            </div>
+              </div> -->
           </div>
         </div>
       </div>
