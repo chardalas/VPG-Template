@@ -6,18 +6,60 @@
 	display: block;
 	height: auto;
 	max-width: 100%;
-	width:100%;
+	width: 100%;
 }
 
-.footer-links.col-first img {
-  width: 80%;
-  display: inline;
+.footer {
+    border-top: 2px solid #cccccc;
+    margin-top: 0px;
+    background-color: #b53;
 }
 
-/*.footer_container {
+.footer_container {
 	margin-top:0px; 
 	margin-bottom:0px;
-}*/
+}
+
+/* ------ Carousel ----- */
+
+#templatemo-carousel {
+    /*background: url('') no-repeat center center fixed; */
+    height: 700px;
+}
+
+#templatemo-carousel .item {
+    height: 700px;
+}
+#templatemo-carousel .carousel-inner > .item > img {
+    position: absolute;
+    min-width: 100%;
+    height: 700px;
+    left: 0;
+    top: 0;
+}
+
+@media (min-width: 768px) {
+    #templatemo-carousel .carousel-caption p {
+        margin-bottom: 20px;
+        line-height: 1.4;
+        font-size: 21px;
+    }
+
+    #templatemo-carousel .carousel-caption {
+        padding-bottom: 140px;
+        right: 20%;
+        left: 20%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #templatemo-carousel {
+        /*background: url('') no-repeat center center;*/
+        height: 700px;
+    }
+}
+
+/* ------ End of Carousel ----- */
 
 /*@media (min-width: 768px) {
 	.navbar-left {

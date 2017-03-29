@@ -3,6 +3,7 @@
 	<set name="Default Page">
 		<style name="Basic Color" variable="basic" type="color" />
 		<style name="Basic Spacing" variable="basic-spacing" type="size" />
+		<style name="Menu Color" variable="basic-menu" type="color" />
 	</set>
 	<set name="Body">
 		<style name="Body" variable="body" type="type" />
