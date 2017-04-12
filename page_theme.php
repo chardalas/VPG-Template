@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Theme\Urbanic;
+namespace Application\Theme\Vpgallery;
 
 use Concrete\Core\Page\Theme\Theme;
 

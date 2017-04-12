@@ -1,2 +1,2 @@
-Urbanic - Bootstrap 3
-Custom template from html to concrete5 theme.
+Victor Pasmore Gallery Theme
+This is a custom theme implementation dedicated to the "Victor Pasmore Gallery" web application. It is based on popular HTML, CSS, and JS framework: Bootstarp.

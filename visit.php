@@ -1,29 +1,31 @@
 <?php defined('C5_EXECUTE') or die("Access Denied.");?>
 <!DOCTYPE html>
 <html lang="en">
-  <!--Header starts-->
-  <?php
-    Loader::element('header_required');
-    $this->addHeaderItem('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
-    $this->addHeaderItem('<meta name="viewport" content="width=device-width, initial-scale=1">');
-    // Bootstrap
-    $this->addHeaderItem('<link href="' . $view->getThemePath() . '/css/bootstrap.css" rel="stylesheet" type="text/css">');
-    $this->addHeaderItem('<link href="' . $view->getThemePath() . '/css/bootstrap-social.css" rel="stylesheet" type="text/css">');
-    $this->addHeaderItem('<link href="' . $view->getThemePath() . '/css/font-awesome.css" rel="stylesheet" type="text/css">');
-    // Custom styles/js for this template.
-    $this->addHeaderItem('<link href="' . $view->getThemePath() . '/css/vpg-stylesheet.css" rel="stylesheet" type="text/css">');
-  ?>
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <!--Header ends-->
+  <head>
+    <?php Loader::element('header_required'); ?>
+    <?php global $u;
+      $mode = $u->isLoggedIn ? 'fixed' : 'static';
+    ?>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="<?php print $view->getThemePath() ?>/css/bootstrap.css" rel='stylesheet' type='text/css'>
+    <link href="<?php print $view->getThemePath() ?>/css/bootstrap-social.css" rel='stylesheet' type='text/css'>
+    <link href="<?php print $view->getThemePath() ?>/css/font-awesome.css" rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="<?php print $view->getThemePath() ?>/css/vpg-stylesheet.css" rel='stylesheet' type='text/css'>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
   <body>
     <div class="<?php print $c->getPageWrapperClass() ?>">
     <div class="navbar-wrapper">
-      <nav class="navbar navbar-default navbar-fixed-top">
+      <nav class="navbar navbar-default navbar-<?php print $mode ?>-top">
         <div class="container">
           <div class="row">
             <div class="col-sm-3 col-lg-2">
@@ -58,74 +60,78 @@
                 </div>
               </div>
             </div>
-            </div>
           </div>
+        </div>
         <!--/.nav-collapse -->
       </nav>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12"> 
-          <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/victor-pasmore-with-his-wife.png" alt="" title="" />
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7">
-          <p>
-            Born in Chesham, Surrey, Victor Pasmore (1908-1998) is known to be one of the leading protagonists of the twentieth-century abstract art movement, and who fuelled what is described by historian Herbert Read as “the most revolutionary event in post-war British art.” As from an early age, Victor Pasmore showed unmistakable promise in the art of landscape painting – a practice which he developed further through his enrolment at Harrow School and his studies on the French Impressionists.
-          </p>
-        </div>
-        <div class="col-lg-5">
-          <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/children-playing-on-the-shore.png" alt="" title="" />
-        </div>
-      </div>
-      </div>
-      <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/wendy-combing-her-hair.png" alt="" title="" />
-        </div>
-        <div class="col-lg-9">
-          <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/the-reopening-of-the-apollo.png" alt="" title="" />
-        </div>
-      </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7">
-            <p>“Whereas before with the aid of the mirror, the painter approached the obective world form outside, graudually peeling off successive skins until he reached the subjective centre; in abstract form he must begin with an objective core and build outwards until he finds a subjective circumference.” - Victor Pasmore, What is Abstract Art? The Sunday Times, 1961</p>
-          </div>
-          <div class="col-lg-5">
-            <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/vp-tate-1965-john-pasmore.png" alt="" title="" />
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <img class="artist-vp img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/victor-pasmore.png" alt="" title="" />
-          </div>
-          <div class="col-lg-8">
-            <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <img class="artist-ge img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/the-green-earth.png" alt="" title="" />
-              </div>
+      
+	  
+ <div class="container">
+			<div class="row">
+				<div class="templatemo-contact" id="templatemo-contact">
+					<?php
+					$a = new Area('Contact');
+					$a->enableGridContainer();
+					// $a->setAreaGridMaximumColumns(1);
+					$a->display($c);
+					?>
+				</div>
+			</div>
+		</div>
+	  
+	  	<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+				<p><br>
+</p>
+<p>ADMISSION TO THE VICTOR PASMORE GALLERY IS FREE
+</p>
+<p>Opening hours Monday - Friday, 11.00am - 3.00pm (except for public holidays)
+</p>
+<p>Interest: Art, Culture, Education, Galleries and Museums,
+</p>
+<p>How to find us
+</p>
+<p>The Central Bank of Malta Annexe, St James Counterguard, Valletta, VLT 1060 (The Gallery is just off Girolamo Cassar Avenue and 5 minutes away from the Valletta bus terminus and Triton Fountain)
+</p>
+<p>Accessibility
+</p>
+<p>Wheel-chair friendly + WC
+</p>
+<p>Contact Details
+</p>
+<p>Email: <a href="mailto:info@victorpasmoregallery.org">info@victorpasmoregallery.org</a>
+</p>
+<p>Tel: (+356) 2550 3360
+</p>
+<p>Facebook: Victor Pasmore Gallery (<a href="https://www.facebook.com/victorpasmoregallery/">https://www.facebook.com/victorpasmoregallery/</a>)
+</p>
+<p>Instagram: Victor Pasmore Gallery (<a href="https://www.instagram.com/vpgallery/">https://www.instagram.com/vpgallery/</a>)
+</p>
+<p>Tours
+</p>
+<p>Free daily gallery talk at 1.00pm. Lasts around 30 minutes.
+</p>
+<p>Group visits of between 10 to 20 persons per group will be providd with a free tour of 30-45 minutes by the gallery curator. Tours are available in English and Maltese and must be booked in advance (link to contact form). Larger groups will be split into 20 persons or less. CONTACT US to book a group visit on your prefereed date and time. Group tours may also be organised before or after hours, but are subject to availability and security conditions.
+</p>
+<p>School visits
+</p>
+<p>Specialised and child-friendly tours are offered beween 9.00am-12.00pm, for groups which do no exceed 25 persons. These tours are of a 60 minute duration and include an observation and drawing exercise in the garden just outside the gallery. CONTACT US or further information and reservation.
+</p>
+<p>Events
+</p>
+<p>The Victor Pasmore Gallery organises seasonal children and family workshops, and hosts monthly free public talks as part of the TUESDAY TALKS series. See the full list of past and upcoming events and activities in the CALENDAR tab. &lt;br&gt; All events of the Victor Pasmore Gallery are endorsed by the Valletta 2018 Foundation.
+</p>
+<p>SHARE YOUR VISIT:
+</p>
+<p><a class="specialeffects" href="https://www.tripadvisor.com/Attraction_Review-g190328-d8785062-Reviews-Victor_Pasmore_Gallery-Valletta_Island_of_Malta.html">Share your TripAdvisor ratings and reviews</a>
+</p>
+				</div>
             </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <p>“What I have done is not the process of abstraction from nature but a method of constructing from within.”– Victor Pasmore, The Artist Speaks documentary, 1951</p>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
         </div>
-      </div>
-    <footer>
+        
+<footer>
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -195,11 +201,10 @@
         </div>
       </div>
     </footer>
-    </div><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php print $view->getThemePath() ?>/js/bootstrap.min.js"  type="text/javascript"></script>
-    <script src="<?php print $view->getThemePath() ?>/js/vpgallery.js" type="text/javascript"></script>
     <!-- <script src="<?php print $view->getThemePath() ?>/js/jquery.min.js" type="text/javascript"></script> -->
     <?php  Loader::element('footer_required'); ?>
   </body>

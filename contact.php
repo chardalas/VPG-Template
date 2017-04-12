@@ -1,29 +1,31 @@
 <?php defined('C5_EXECUTE') or die("Access Denied.");?>
 <!DOCTYPE html>
 <html lang="en">
-  <!--Header starts-->
-  <?php
-    Loader::element('header_required');
-    $this->addHeaderItem('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
-    $this->addHeaderItem('<meta name="viewport" content="width=device-width, initial-scale=1">');
-    // Bootstrap
-    $this->addHeaderItem('<link href="' . $view->getThemePath() . '/css/bootstrap.css" rel="stylesheet" type="text/css">');
-    $this->addHeaderItem('<link href="' . $view->getThemePath() . '/css/bootstrap-social.css" rel="stylesheet" type="text/css">');
-    $this->addHeaderItem('<link href="' . $view->getThemePath() . '/css/font-awesome.css" rel="stylesheet" type="text/css">');
-    // Custom styles/js for this template.
-    $this->addHeaderItem('<link href="' . $view->getThemePath() . '/css/vpg-stylesheet.css" rel="stylesheet" type="text/css">');
-  ?>
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <!--Header ends-->
-  <body>
+  <head>
+    <?php Loader::element('header_required'); ?>
+    <?php global $u;
+      $mode = $u->isLoggedIn ? 'fixed' : 'static';
+    ?>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="<?php print $view->getThemePath() ?>/css/bootstrap.css" rel='stylesheet' type='text/css'>
+    <link href="<?php print $view->getThemePath() ?>/css/bootstrap-social.css" rel='stylesheet' type='text/css'>
+    <link href="<?php print $view->getThemePath() ?>/css/font-awesome.css" rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="<?php print $view->getThemePath() ?>/css/vpg-stylesheet.css" rel='stylesheet' type='text/css'>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+	<body>
     <div class="<?php print $c->getPageWrapperClass() ?>">
     <div class="navbar-wrapper">
-      <nav class="navbar navbar-default navbar-fixed-top">
+      <nav class="navbar navbar-default navbar-<?php print $mode ?>-top">
         <div class="container">
           <div class="row">
             <div class="col-sm-3 col-lg-2">
@@ -58,74 +60,50 @@
                 </div>
               </div>
             </div>
-            </div>
           </div>
+        </div>
         <!--/.nav-collapse -->
       </nav>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12"> 
-          <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/victor-pasmore-with-his-wife.png" alt="" title="" />
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7">
-          <p>
-            Born in Chesham, Surrey, Victor Pasmore (1908-1998) is known to be one of the leading protagonists of the twentieth-century abstract art movement, and who fuelled what is described by historian Herbert Read as “the most revolutionary event in post-war British art.” As from an early age, Victor Pasmore showed unmistakable promise in the art of landscape painting – a practice which he developed further through his enrolment at Harrow School and his studies on the French Impressionists.
-          </p>
-        </div>
-        <div class="col-lg-5">
-          <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/children-playing-on-the-shore.png" alt="" title="" />
-        </div>
-      </div>
-      </div>
-      <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/wendy-combing-her-hair.png" alt="" title="" />
-        </div>
-        <div class="col-lg-9">
-          <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/the-reopening-of-the-apollo.png" alt="" title="" />
-        </div>
-      </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7">
-            <p>“Whereas before with the aid of the mirror, the painter approached the obective world form outside, graudually peeling off successive skins until he reached the subjective centre; in abstract form he must begin with an objective core and build outwards until he finds a subjective circumference.” - Victor Pasmore, What is Abstract Art? The Sunday Times, 1961</p>
-          </div>
-          <div class="col-lg-5">
-            <img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/vp-tate-1965-john-pasmore.png" alt="" title="" />
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <img class="artist-vp img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/victor-pasmore.png" alt="" title="" />
-          </div>
-          <div class="col-lg-8">
-            <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <img class="artist-ge img-responsive" src="<?php print $view->getThemePath() ?>/images/the-artist/the-green-earth.png" alt="" title="" />
-              </div>
+	  
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-12">
+				<img class="img-responsive" src="<?php print $view->getThemePath() ?>/images/contact/vector-contact.png" />
+				</div>
+
             </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <p>“What I have done is not the process of abstraction from nature but a method of constructing from within.”– Victor Pasmore, The Artist Speaks documentary, 1951</p>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
         </div>
-      </div>
-    <footer>
+		
+	  
+	  
+	  	<div class="container">
+			<div class="row">
+				
+				<div class="col-md-12">
+				Contact us</br></br>
+				   The Polverista, Central Bank of Malta Annexe, St James’s Counterguard, Valletta VLT 1060, Malta</br></br>
+					info@victorpasmoregallery.com</br></br>
+					(+356) 2550 3360</br></br>
+					SEND US A MESSAGE
+				</div>
+
+            </div>
+        </div>
+	  <div class="container">
+			<div class="row">
+				<div class="templatemo-contact" id="templatemo-contact">
+					<?php
+					$a = new Area('Contact');
+					$a->enableGridContainer();
+					// $a->setAreaGridMaximumColumns(1);
+					$a->display($c);
+					?>
+				</div>
+			</div>
+		</div>
+		<footer>
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -195,11 +173,10 @@
         </div>
       </div>
     </footer>
-    </div><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php print $view->getThemePath() ?>/js/bootstrap.min.js"  type="text/javascript"></script>
-    <script src="<?php print $view->getThemePath() ?>/js/vpgallery.js" type="text/javascript"></script>
     <!-- <script src="<?php print $view->getThemePath() ?>/js/jquery.min.js" type="text/javascript"></script> -->
     <?php  Loader::element('footer_required'); ?>
   </body>
